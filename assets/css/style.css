@@ -1,0 +1,1493 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;800&display=swap');
+
+:root {
+    --rojo: #D15555;
+    --negro: #000;
+    --blanco: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 0;
+}
+
+/* Sub contenedor */
+.subContainer {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+
+/* Imgágen de logo */
+.logo {
+    width: 11rem;
+}
+
+/* Ligas, menú, teoría */
+.lista {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.linea {
+    width: 1px;
+    background: var(--rojo);
+    height: 4rem;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    text-decoration: none;
+    color: var(--negro);
+}
+
+.cont_img {
+    display: flex;
+    width: 100%;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_item {
+    width: 2.5rem;
+    transition: all .5s ease;
+}
+
+.ac {
+    width: 3.5rem;
+}
+
+.item:hover .img_item {
+    transform: scale(1.15);
+}
+
+.tit {
+    margin-top: .5rem;
+    font-size: 1.2rem;
+    height: 40%;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: .1rem;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Animación para borde debajo al hacer hover */
+.tit::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: var(--rojo);
+    width: 0;
+    height: 2px;
+    transition: all .3s ease;
+}
+
+.item:hover .tit::after {
+    width: 100%;
+}
+
+
+.formulario {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 4rem;
+    margin: 2rem 0;
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, .4);
+}
+
+.img_form {
+    width: 50%;
+    max-width: 350px;
+    opacity: .8;
+    padding-right: 4rem;
+}
+
+.form {
+    text-align: center;
+    width: 50%;
+    border-left: 1px solid var(--rojo);
+    padding-left: 4rem;
+    max-width: 500px;
+}
+
+.iniciar_sesion {
+    font-size: 1.4rem;
+    position: relative;
+    width: max-content;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    padding-bottom: .1rem;
+}
+
+.iniciar_sesion::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: var(--rojo);
+    width: 80%;
+    height: 1.5px;
+}
+
+.inputcaja {
+    width: 100%;
+    background: none;
+    color: #333;
+    font-size: 1.7rem;
+    border-bottom: .1rem solid rgba(0, 0, 0, .4);
+    text-transform: none;
+    position: relative;
+}
+
+.inputcaja:nth-child(3) {
+    margin: 1.7rem 0;
+}
+
+.input {
+    padding: .5rem 0;
+    height: 100%;
+    width: 100%;
+    border: 0;
+    z-index: 4;
+    background: transparent;
+}
+
+.inputcaja label {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    color: var(--rojo);
+    font-size: .9rem;
+    transition: .2s linear;
+    z-index: -1;
+}
+
+.input:focus {
+    outline: none;
+}
+
+/* Animación para el input */
+.inputcaja .input:focus~label,
+.inputcaja .input:valid~label {
+    bottom: 2rem;
+    color: var(--negro);
+    font-weight: 500;
+}
+
+
+.pie_formulario {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: .9rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.recordar {
+    display: flex;
+    align-items: center;
+    margin: .5rem;
+}
+
+.textoRecordar {
+    margin-left: .3rem;
+    font-weight: 500;
+}
+
+.olvidoContraseña {
+    color: var(--rojo);
+}
+
+.submit {
+    width: 100%;
+    padding: .6rem 0;
+    margin-top: 1rem;
+    border-radius: .2rem;
+    border: 0;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--negro);
+    border: 1px solid var(--rojo);
+}
+
+.submit i {
+    margin-left: .2rem;
+    transition: .5s;
+}
+
+.submit:hover i {
+    transform: rotate(-90deg);
+    font-size: 1.3rem;
+}
+
+.pie {
+    width: 60%;
+    height: auto;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.texto_footer {
+    font-size: 1.4rem;
+}
+
+.iconos {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icono {
+    text-decoration: none;
+    margin: 0 .7rem;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    transition: all .8s ease;
+    border: 1px solid var(--blanco);
+}
+
+.icono:hover {
+    border: 1px solid rgba(209, 85, 85, .7);
+}
+
+
+
+.modos {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 10px;
+    row-gap: 2rem;
+    margin: 3rem 0;
+}
+
+.modo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--negro);
+    text-align: center;
+}
+
+.conImgModo {
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conImgModo .imgModo {
+    width: 60%;
+}
+
+.imgModo {
+    max-width: 70px;
+}
+
+.contTituloModo {
+    width: 90%;
+    text-align: center;
+    border: 1px solid var(--rojo);
+    border-radius: 8px;
+    margin-top: .7rem;
+    color: var(--negro);
+    padding: .4rem .7rem;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.modo:hover .contTituloModo {
+    background: var(--rojo);
+    color: var(--blanco);
+    transform: scale(.9);
+}
+
+
+
+
+
+
+
+
+
+
+
+.tabla {
+    width: 100%;
+    margin: 3rem 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tablas_jornadas {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    height: 40px;
+}
+
+.tablaBoton {
+    text-decoration: none;
+    color: var(--rojo);
+    border: 1px solid var(--rojo);
+    padding: .4rem 1rem;
+    transition: all .5s ease;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.tablaBoton img {
+    max-width: 30px;
+    margin-left: .4rem;
+}
+
+.tablaBoton:nth-child(1) {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.tablaBoton:nth-child(2) {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.tablaBoton:hover {
+    transform: scale(.95);
+}
+
+.tablaBoton:nth-child(1):hover,
+.tablaBoton:nth-child(2):hover {
+    border-radius: 5px;
+}
+
+.tituloCampeonatoTabla {
+    font-weight: 500;
+    position: relative;
+    padding-bottom: .2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.nombreCampeonatoTabla {
+    margin-top: -10px;
+    font-style: italic;
+    background: linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+.tituloTabla {
+    margin-top: .7rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.tablaPosiciones {
+    width: 100%;
+    overflow: scroll;
+    margin-top: 1rem;
+}
+
+.tablaPosiciones::-webkit-scrollbar {
+    width: 2px;
+    background: transparent;
+}
+
+.table {
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    text-align: left;
+    font-size: .9rem;
+}
+
+.destacado {
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.table tr:nth-child(1) td {
+    padding: .8rem .9rem;
+    background: var(--rojo);
+    color: var(--blanco);
+}
+
+.table td {
+    padding: .3rem 1.2rem;
+    border-bottom: 1px solid var(--rojo);
+}
+
+.table td img {
+    width: 30px;
+}
+
+.desaparecer {
+    display: none;
+}
+
+.botonesMostrarOcultar {
+    margin: 0 auto;
+    margin-top: .5rem;
+    width: max-content;
+}
+
+.ocultar {
+    display: none;
+}
+
+.mostrarMas,
+.ocultar {
+    border: 1px solid var(--rojo);
+    padding: .7rem 1.4rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all .5s ease;
+    background: none;
+}
+
+.mostrarMas:hover,
+.ocultar:hover {
+    background: var(--rojo);
+    transform: scale(.9);
+    color: var(--blanco);
+}
+
+.table tr:nth-child(odd) {
+    color: var(--negro);
+}
+
+/* Pares */
+.table tr:nth-child(even) {
+    background-color: var(--blanco);
+    color: var(--negro);
+}
+
+
+
+
+
+
+.jornadas {
+    width: 100%;
+    margin: 3rem 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tituloJornadas {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+
+}
+
+.mySwiper {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+    position: relative;
+}
+
+.mySwiper .swiper-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: max-content;
+}
+
+.mySwiper .swiper-wrapper .swiper-slide {
+    width: max-content !important;
+}
+
+.jornadaNumero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(209, 85, 85, 0.9);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(209, 85, 85, 0.9);
+    box-shadow: 0px 0px 3px12px rgba(209, 85, 85, 0.9);
+    border-radius: 5px;
+    color: var(--negro);
+    font-size: .9rem;
+    transition: all .5s ease;
+}
+
+.jornadaNumero:hover {
+    background: var(--rojo);
+    color: var(--blanco);
+    transform: scale(.95);
+}
+
+.tituloPartidos {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: .8rem 0;
+}
+
+
+
+
+.mySwiperSegundo {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem;
+    border-radius: 2rem;
+    box-shadow: rgba(6, 24, 44, 0.2) 0px 0px 0px 2px, rgba(6, 24, 44, 0.3) 0px 4px 6px -1px, rgba(255, 255, 255, 0.01) 0px 1px 0px inset;
+    margin: 1rem 0;
+    margin-top: 2rem;
+}
+
+.partidos {
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+}
+
+.contenedorBotonPagi {
+
+    padding: 1rem;
+    position: absolute;
+    top: 428px !important;
+    margin: 0 auto !important;
+    margin-top: 1rem !important;
+    width: 98% !important;
+}
+
+#botonesArriba {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+#botonesArriba span {
+    width: 10px;
+    height: 10px;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: .4rem !important;
+}
+
+.contenedorPartidos {
+    width: 100% !important;
+}
+
+.indicacionPartido {
+    background: var(--rojo);
+    padding: .5rem 1rem;
+    border-radius: 20px;
+    color: var(--blanco);
+    font-weight: 500;
+    width: max-content;
+}
+
+.tituloCampeonatoContenedor {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.tituloCampeonatoContenedor .nombreCampeonato {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.7rem;
+    background: linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: -.5rem;
+}
+
+.infoPartido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .7rem;
+}
+
+.infoPartido .equipo {
+    width: 30%;
+    text-align: center;
+    text-decoration: none;
+    color: var(--negro);
+}
+
+.local,
+.visitante {
+    font-weight: 400;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: .2rem 0;
+    border-radius: 10px;
+    position: relative;
+    width: max-content;
+}
+
+.local::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 70%;
+    margin: 0 auto;
+    height: 2px;
+    background: var(--rojo);
+}
+
+.visitante::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 70%;
+    margin: 0 auto;
+    height: 2px;
+    background: var(--negro);
+}
+
+.equipo .logoEquipo {
+    max-width: 80px;
+    margin-bottom: .7rem;
+    object-fit: cover;
+    transition: .3s ease;
+}
+
+.equipo:hover .logoEquipo {
+    transform: scale(1.04);
+}
+
+.nombreEquipo {
+    font-weight: 500;
+    position: relative;
+    padding-bottom: .2rem;
+}
+
+.nombreEquipo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 2px;
+    background: var(--rojo);
+    transition: .5s ease;
+}
+
+.equipo:hover .nombreEquipo::after {
+    width: 40%;
+}
+
+.resultado {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.vs {
+    font-style: italic;
+    position: relative;
+    font-size: .9rem;
+    font-weight: bold;
+}
+
+.vsLetra1 {
+    position: absolute;
+    top: 0;
+    transform: translate(-100%, -70%);
+}
+
+.vsLetra2 {
+    position: absolute;
+    top: 0;
+    transform: translate(-20%, -30%);
+}
+
+.vsLetra1,
+.vsLetra2 {
+    background: linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.botonesPartidos {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    margin: 0 auto;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.botonPartido {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    text-decoration: none;
+    padding: .5rem .8rem;
+    border-radius: 18px;
+    color: var(--negro);
+    border: 1px solid var(--rojo);
+    transition: .5s;
+}
+
+.botonPartido:hover {
+    transform: scale(.9);
+}
+
+.botonPartido img {
+    max-width: 20px;
+    margin-left: .4rem;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--negro);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 1.5rem;
+}
+
+
+
+.contenedorTeoria {
+    margin: 2rem 0;
+}
+
+.arribaTeoria {
+    text-align: center;
+}
+
+.tituloTeoria {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    display: block;
+    text-decoration: none;
+    color: blue;
+}
+
+.textoTeoria {
+    font-size: 1rem;
+    line-height: 1.4;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.cajasTeoria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    grid-auto-rows: minmax(200px, auto);
+    margin-top: 2rem;
+    gap: 15px;
+}
+
+.targetaTeoria {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+    height: 100%;
+    overflow: hidden;
+    border-radius: .6rem;
+    border: 1px solid var(--rojo);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.superiorTeoria {
+    background: var(--rojo);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transition: all .3s linear;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--blanco);
+    z-index: 11;
+}
+
+.lineaIconoTeoria {
+    width: 73px;
+    height: 73px;
+    border-radius: 100%;
+    border: 2px solid var(--blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.contenedorIconoTeoria {
+    width: 63px;
+    height: 63px;
+    border-radius: 100%;
+    background: var(--blanco);
+    padding: .8rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconoTeoria {
+    width: 90%;
+}
+
+.tituloTarjetaTeoria {
+    font-size: 1rem;
+}
+
+.masTeoria {
+    font-weight: bold;
+    border: 0;
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    animation: subir 1.8s infinite linear;
+    background: none;
+    color: var(--blanco);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, .9);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, .9);
+    box-shadow: 0px 0px 3px12px rgba(255, 255, 255, .9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.masTeoria span {
+    animation: bajar 1.8s infinite linear;
+    animation-delay: .3s;
+    margin: auto;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, .9);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, .9);
+    box-shadow: 0px 0px 3px12px rgba(255, 255, 255, .9);
+}
+
+@keyframes subir {
+    0% {
+        transform: scale(.7);
+        box-shadow: none;
+    }
+
+    50% {
+        transform: scale(1);
+        -webkit-box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, .9);
+        -moz-box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, .9);
+        box-shadow: 0px 0px 3px12px rgba(255, 255, 255, .9);
+    }
+
+    100% {
+        box-shadow: none;
+    }
+}
+
+@keyframes bajar {
+    0% {
+        transform: scale(.2);
+        box-shadow: none;
+    }
+
+    50% {
+        transform: scale(.7);
+        -webkit-box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, .9);
+        -moz-box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, .9);
+        box-shadow: 0px 0px 3px12px rgba(255, 255, 255, .9);
+    }
+
+    100% {
+        box-shadow: none;
+    }
+}
+
+.inferiorTeoria {
+    font-size: .9rem;
+    line-height: 1.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 95%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    bottom: 0;
+    transition: all .5s ease;
+    padding: .5rem;
+    text-align: center;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.targetaTeoria:hover .superiorTeoria {
+    top: -100%;
+}
+
+.targetaTeoria:hover .inferiorTeoria {
+    left: 0;
+}
+
+
+
+
+
+
+
+
+.tableroInfo {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.equipoTablero {
+    text-align: center;
+    text-decoration: none;
+    color: var(--negro);
+}
+
+.escudoNombre {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .5rem 0;
+    margin: .8rem 0;
+}
+
+.nombreEquipoTablero {
+    font-size: 1.1rem;
+    position: relative;
+    transition: all .5s ease;
+    padding-bottom: .2rem;
+}
+
+.equipoTablero:nth-child(1) .nombreEquipoTablero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: var(--rojo);
+    width: 0;
+    height: 2px;
+    transition: all .3s ease;
+}
+
+.equipoTablero:not(:first-child) .nombreEquipoTablero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: var(--negro);
+    width: 0;
+    height: 2px;
+    transition: all .3s ease;
+}
+
+.contenedorEscudoTablero {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--blanco);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+}
+
+.escudoNombre img {
+    max-width: 70px;
+    width: 70%;
+}
+
+.numeroMarcador {
+    font-size: 3rem;
+}
+
+.marcadorTablero {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.estadoTablero {
+    display: flex;
+    justify-content: center;
+}
+
+.estadoPartidoTablero {
+    border: 0;
+    background: none;
+    padding: .5rem 1rem;
+    border-radius: 1.4rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background: var(--rojo);
+    color: var(--blanco);
+}
+.contenedorRegistros {
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.tablaRegistro {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.tablaRegistro tr:nth-child(1) {
+    font-weight: 500;
+}
+
+.tablaRegistro tr:nth-child(1) td {
+    padding: 1rem 0;
+}
+
+.tablaRegistro tr td {
+    padding: .5rem;
+}
+
+.equipoTablero:nth-child(1):hover .nombreEquipoTablero::after,
+.equipoTablero:not(:first-child):hover .nombreEquipoTablero::after {
+    width: 80%;
+}
+
+
+
+
+
+
+.opcionesAnotacionesTablero {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(50px, auto);
+    width: max-content;
+    margin: 4rem 0;
+    gap: 5px;
+}
+
+.opcionTablero {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--negro);
+    transition: all .5s ease;
+    border-radius: .5rem;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+}
+
+.conImgOpcion {
+    width: 100px;
+    height: 110px;
+    margin-bottom: .7rem;
+    overflow: hidden;
+}
+
+.imgOpcion {
+    width: 100%;
+    object-fit: cover;
+    transition: all .3s ease;
+}
+
+.contTituloOpcion {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.opcionTablero:hover {
+    transform: scale(.95);
+}
+
+.opcionTablero:hover .imgOpcion {
+    animation: moverImagen 2s linear infinite;
+    animation-delay: .3s;
+}
+
+@keyframes moverImagen {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+
+
+
+
+.tituloResponsable {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+
+.contenedorSeleccionar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: max-content;
+    margin: 2rem auto;
+    gap: 1.5rem;
+    grid-template-rows: minmax(40px, auto);
+    
+}
+.Seleccionar {
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+}
+.Seleccionar select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    padding: 0 .5em;
+    color: var(--negro);
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    overflow: hidden;
+}
+.Seleccionar select option {
+    color: var(--negro);
+    font-size: .9rem;
+    width: 150px;
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+.Seleccionar::after {
+    height: 100%;
+    background: var(--blanco);
+    content: '\25BC';
+    position: absolute;
+    top: 18%;
+    right: 0;
+    bottom: 0;
+    padding: 0 1em;
+    cursor: pointer;
+    pointer-events:none;
+    transition: .25s all ease;
+ }
+.Seleccionar:hover::after {
+    color: #23b499;
+}
+.guardar {
+    border: 0;
+    background: none;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .subContainer {
+        width: 90%;
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+
+    .img_form {
+        max-width: 300px;
+    }
+
+    .pie {
+        width: 100%;
+        margin-top: .5rem;
+    }
+
+    .modos {
+        width: 100%;
+    }
+
+    .tablas {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .subContainer {
+        width: 100%;
+    }
+
+    .formulario {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .img_form {
+        padding-right: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .form {
+        width: 90%;
+        margin: 0 auto;
+        border: 0;
+        padding: 2rem .7rem;
+    }
+
+    .tituloCampeonatoTabla {
+        margin-bottom: 1rem;
+    }
+
+    .table {
+        font-size: .7rem;
+    }
+
+    .mySwiper {
+        width: 90%;
+    }
+
+    .cajasTeoria {
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(220px, auto);
+    }
+
+    .escudoNombre {
+        flex-direction: column;
+    }
+
+    .equipoTablero:not(:first-child) .escudoNombre {
+        flex-direction: column-reverse;
+    }
+
+    .equipoTablero .escudoNombre .contenedorEscudoTablero {
+        margin: 0;
+        margin-bottom: .4rem;
+    }
+
+    .contenedorRegistros {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .formulario {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .modos {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        row-gap: 1rem;
+    }
+
+    .contTituloModo {
+        width: 100%;
+        padding: .4rem .2rem;
+    }
+
+    .table {
+        font-size: .6rem;
+    }
+
+    .table td img {
+        width: 20px;
+    }
+
+    .tablas_jornadas {
+        padding: 2px;
+        height: 50px;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+
+    .tablaBoton {
+        margin: .3rem 0;
+        border-radius: 5px;
+    }
+
+    .mySwiperSegundo {
+        padding: 1.5rem .5rem;
+        box-shadow: rgba(0, 0, 0, 0.38) 0px 2px 4px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+
+    .contenedorPartidos {
+        width: 100%;
+    }
+
+    .local,
+    .visitante {
+        font-size: .8rem;
+    }
+
+    .nombreEquipo {
+        display: none;
+    }
+
+    .textoTeoria {
+        width: 100%;
+    }
+
+
+    .opcionesAnotacionesTablero {
+        width: 100%;
+        row-gap: 10px;
+    }
+
+    .opcionTablero {
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .conImgOpcion {
+        width: 70px;
+        height: 80px;
+    }
+
+    .contTituloOpcion {
+        font-size: .9rem;
+    }
+
+    .tablaRegistro {
+        width: 100%;
+    }
+    .contenedorSeleccionar {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    .contenedorTablero,
+    .contenedorRegistros {
+        font-size: .9rem;
+    }
+
+    .contenedorEscudoTablero {
+        width: 70px;
+        height: 70px;
+    }
+
+    .numeroMarcador {
+        font-size: 1.5rem;
+    }
+
+    .nombreEquipoTablero {
+        font-size: .9rem;
+    }
+}
+
+@media screen and (max-width: 270px) {
+    .tablas_jornadas {
+        flex-flow: column-reverse;
+        height: auto;
+    }
+
+    .botonesPartidos {
+        flex-direction: column;
+    }
+}
